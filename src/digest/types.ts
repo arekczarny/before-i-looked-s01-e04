@@ -29,12 +29,3 @@ export type NightDigest = {
   /** Event counts across the night (for the board). */
   counts: { ok: number; retry: number; fail: number };
 };
-
-/**
- * Read `runsDir/<night>.jsonl` into one row per job.
- * Returns `null` when the night's file does not exist.
- * Bad lines are counted, never thrown. Keep the log's time offsets.
- *
- * Implementation: issue #2 (`src/digest/read.ts`).
- */
-export declare function readNight(runsDir: string, night: string): NightDigest | null;
